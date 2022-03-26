@@ -25,7 +25,7 @@ export default function (settings) {
             button.appendChild(document.createTextNode("Back"));
             document.getElementById("menu").innerHTML = "";
             document.getElementById("menu").appendChild(button);
-            document.getElementById("app").innerHTML = module.default();
+            module.default();
 
             const backButtons = document.getElementsByClassName("back");
             if (backButtons.length) {
