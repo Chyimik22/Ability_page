@@ -1,3 +1,5 @@
+import imports from './imports';
+
 export default function (settings) {
   let ul = document.createElement("ul");
   settings.menuItems.forEach((item) => {
@@ -18,7 +20,7 @@ export default function (settings) {
     for (const menuItem of menuItems) {
       menuItem.addEventListener("click", (e) => {
         e.preventDefault();
-        import("./tests/" + e.target.dataset.itemName + ".js")
+          imports[e.target.dataset.itemName]
           .then((module) => {
             let button = document.createElement("button");
             button.setAttribute("class", "back");
