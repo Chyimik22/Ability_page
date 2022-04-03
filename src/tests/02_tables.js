@@ -1,3 +1,3 @@
 export default function () {
-  return "a";
+  document.getElementById("app").innerHTML = "a";
 }
