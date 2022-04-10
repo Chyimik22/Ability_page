@@ -4,8 +4,8 @@ import app from "./app";
 //if (module.hot) { module.hot.accept(function () { location.reload(); }); }
 docReady(function() {
     // DOM is loaded and ready for manipulation here
-    app(settings);
 
+    app(settings);
 });
 
 function docReady(fn) {

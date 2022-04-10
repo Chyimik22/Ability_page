@@ -1,3 +1,5 @@
+import settings from "./settings";
+
 export default function (settings) {
     let ul = document.createElement("ul");
     for (const test of settings.tests) {
