@@ -1,57 +1,32 @@
-export default function () {
-    function alert1() {
-        alert("Avoid this page");
-    }
+import {createButton,addDiv,newLine} from "../services/htmlElements";
 
-    function yesOrNo() {
+export default function () {
+    addDiv("info");
+    addDiv("buttons");
+
+    createButton(function () {
+        alert("Avoid this page");
+    }, "alert1", "Popup Alert", "buttons");
+
+    newLine("buttons");
+
+    createButton(function () {
         if (confirm("You still want to be here?")) {
             alert("I am so proud of you");
         } else {
             alert("You better to get out");
         }
-    }
+    }, "yesOrNo", "Question", "buttons");
 
-    function question() {
+    newLine("buttons");
+
+    createButton(function () {
         const name = prompt("SAY YOUR NAME");
         if (name) {
-            //var name changes to what user write and its no more prompt
             alert("Hi " + name);
         } else {
-            //alert(`You have canceled my request and her what I got instead ${name}`);
             alert("You have canceled my request and her what i got instead " + name);
         }
-    }
+    }, "greeting", "Greeting", "buttons");
 
-    const nline = document.createElement("br");
-
-    let butt_alert1 = document.createElement("button");
-    butt_alert1.setAttribute("id", "butt_alert1");
-    butt_alert1.appendChild(document.createTextNode("Popup alert"));
-    document.getElementById("app").appendChild(butt_alert1);
-    document.getElementById("butt_alert1").onclick = function () {
-        alert1();
-    };
-
-    document.getElementById("app").appendChild(nline.cloneNode(true));
-    //document.getElementById("app").innerHTML = "<br>";
-    //document.getElementById("app").appendChild("br");
-    //Do not work as expected, or it is clearing HTML before
-
-    let butt_quest = document.createElement("button");
-    butt_quest.setAttribute("id", "butt_quest");
-    butt_quest.appendChild(document.createTextNode("Question"));
-    document.getElementById("app").appendChild(butt_quest);
-    document.getElementById("butt_quest").onclick = function () {
-        question();
-    };
-    //document.getElementById("butt_quest").appendChild(nline);
-    document.getElementById("app").appendChild(nline.cloneNode(true));
-
-    let butt_yesOrNo = document.createElement("button");
-    butt_yesOrNo.setAttribute("id", "butt_yesOrNo");
-    butt_yesOrNo.appendChild(document.createTextNode("Yes Or No"));
-    document.getElementById("app").appendChild(butt_yesOrNo);
-    document.getElementById("butt_yesOrNo").onclick = function () {
-        yesOrNo();
-    };
 }
