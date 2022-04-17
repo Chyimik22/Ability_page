@@ -1,8 +1,8 @@
-import {createButton, addDiv, newLine} from "../services/htmlElements.js";
+import {createButton, addDiv, newLine, setTimeOut} from "../services/htmlElements.js";
 
 export default function () {
     addDiv("info");
-    addDiv("input");
+    addDiv("inputField");
     addDiv("buttons");
     addDiv("result");
     let table = [];
@@ -12,7 +12,7 @@ export default function () {
     input.setAttribute("id", "input",
         "type", "text",
         "placeholder", "Enter data");
-    document.getElementById("input").append(input);
+    document.getElementById("inputField").append(input);
 
     createButton(function () {
         if (input.value !== "") {
@@ -38,9 +38,7 @@ export default function () {
         table = [];
         document.getElementById("result").innerHTML = "Table is empty";
         console.log("Table is empty");
-        setTimeout(function () {
-            document.getElementById("result").innerHTML = "";
-        }, 3000);
+        setTimeOut("result", 3000);
     }, "clearTableButton", "Clear Table", "buttons");
 
     newLine("buttons");

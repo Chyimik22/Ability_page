@@ -15,3 +15,8 @@ export function newLine(divId) {
     let br = document.createElement("br");
     document.getElementById(divId).append(br);
 }
+export function setTimeOut(id,time) {
+    setTimeout(function () {
+        document.getElementById(id).innerHTML = "";
+    }, time);
+}

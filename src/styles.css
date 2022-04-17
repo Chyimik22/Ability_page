@@ -3,3 +3,33 @@ body {
   background: gray;
 }
 /* TODO: input space so buttons do not lay under its field*/
+#input{
+  margin: 10px;
+  height: 50px;
+  font-size: medium;
+}
+button {
+  margin: 1px;
+}
+#inputField {
+  float: left;
+}
+#buttons {
+  margin: 10px;
+  float: left;
+}
+li {
+  padding : 5px;
+}
+ul{
+  list-style-type: none;
+  margin: 0;
+  padding-left : 20px;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+a:hover {
+  color : antiquewhite;
+}
